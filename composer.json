@@ -1,0 +1,5 @@
+{
+    "require": {
+        "stevegrunwell/wp-enforcer": "^0.4.1"
+    }
+}
