@@ -14,7 +14,7 @@ Open your WordPress themes **functions.php** file  `/wp-content/your-theme/funct
 
 ```php
 // Register Custom Gallery
-require_once('wp_bootstrap_gallery.php');
+require_once('wp-bootstrap-gallery.php');
 ```
 
 ## Useage
