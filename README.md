@@ -1,19 +1,13 @@
 # WP Bootstrap Gallery
 ======================
 
-A custom WordPress gallery for dynamic thumbnail layout using Twitter Bootstrap 2 (https://github.com/twitter/bootstrap/) and the WordPress built in gallery manager. Once the script is setup it will alter the WordPress gallery shortcode to create a unique
-thumbnail layout based on the number of gallery items.
+A custom WordPress gallery for dynamic thumbnail layout using Twitter Bootstrap 2 (https://github.com/twitter/bootstrap/) and the WordPress built in gallery manager. Once the script is setup it will alter the WordPress gallery shortcode to create a unique thumbnail layout based on the number of gallery items.
 
-NOTE
-----
-This is a utility class is intended to format your WordPress gallery shortcode to use Twitter Bootstrap 2.2.2 thumbnail layouts, and does not include the dependant Twitter Bootstrap files You will have to install include them manually.
+**This is a utility class is intended to format your WordPress gallery shortcode to use Twitter Bootstrap thumbnail layouts, and does not include the Twitter Bootstrap files You will have to install include them manually.**
 
-Sample Image
-------------
-![Gallery Sample](http://d3j5vwomefv46c.cloudfront.net/photos/large/705506382.jpg?1356134094)
 
-Installation
-------------
+## Installation
+
 Place **wp_bootstrap_gallery.php** in your Wordpress theme folder `/wp-content/your-theme/`
 
 Open your WordPress themes **functions.php** file  `/wp-content/your-theme/functions.php` and add the following code:
@@ -23,12 +17,12 @@ Open your WordPress themes **functions.php** file  `/wp-content/your-theme/funct
 require_once('wp_bootstrap_gallery.php');
 ```
 
-Useage
-------------
+## Useage
+
 Simply create a WordPress post gallery as you usually would and the script will do the rest.
 
-Supported Layouts
-------------
+## Supported Layouts
+
 + 1 Image - One full width image
 + 2 Images - Two half width images
 + 3 Images - One 3/4 width image with two 1/4 width images to the right
@@ -38,8 +32,7 @@ Supported Layouts
 + 7 or more images -  One full width image with two 1/2 width images underneath. All remaining images 1/3 width underneath
 
 
-Creating custom layouts
-------------
+## Creating custom layouts
 
 All layouts are created using Bootstrap span declarations for 12 columns and CSS floats. The script counts the number of images and assigns an array of spans for that number of images.
 
@@ -59,14 +52,18 @@ For example: If we want to layout 6 images where we have One 2/3 (8 Cols) width 
 		break;
 ```
 
-Changelog
-------------
-**1.0:**
-+ Updated to div layout to fix float issues.
-+ Licence now GPL-2.0+ to match WordPress.
-+ Added a copy of the GPL-2.0+ Licence.
+## Changelog
 
-**0.1:**
-+ Initial Commit
+**1.0.1**
+* Updated code to meet WordPress standards.
+* Added project dotfiles, such as .editorconfig, etc.
+
+**1.0.0**
+* Updated to div layout to fix float issues.
+* Licence now GPL-2.0+ to match WordPress.
+* Added a copy of the GPL-2.0+ Licence.
+
+**0.1.0**
+* Initial Commit
 
 
