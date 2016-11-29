@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>WP Bootstrap Gallery by wp-bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">WP Bootstrap Gallery</h1>
+      <h2 class="project-tagline">Twitter Bootstrap layout support with WordPress Gallery.</h2>
+      <a href="https://github.com/wp-bootstrap/wp-bootstrap-gallery" class="btn">View on GitHub</a>
+      <a href="https://github.com/wp-bootstrap/wp-bootstrap-gallery/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/wp-bootstrap/wp-bootstrap-gallery/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="wp-bootstrap-gallery" class="anchor" href="#wp-bootstrap-gallery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WP Bootstrap Gallery</h1>
+
+<p><a href="https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery"><img src="https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery/coverage"><img src="https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery/badges/coverage.svg" alt="Test Coverage"></a>
+<a href="https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery"><img src="https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery/badges/issue_count.svg" alt="Issue Count"></a></p>
+
+<p>A custom WordPress gallery for dynamic thumbnail layout using Twitter Bootstrap 2 (<a href="https://github.com/twitter/bootstrap/">https://github.com/twitter/bootstrap/</a>) and the WordPress built in gallery manager. Once the script is setup it will alter the WordPress gallery shortcode to create a unique thumbnail layout based on the number of gallery items.</p>
+
+<p><strong>This is a utility class is intended to format your WordPress gallery shortcode to use Twitter Bootstrap thumbnail layouts, and does not include the Twitter Bootstrap files You will have to install include them manually.</strong></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Place <strong>wp_bootstrap_gallery.php</strong> in your Wordpress theme folder <code>/wp-content/your-theme/</code></p>
+
+<p>Open your WordPress themes <strong>functions.php</strong> file  <code>/wp-content/your-theme/functions.php</code> and add the following code:</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c">// Register Custom Gallery</span></span>
+<span class="pl-s1"><span class="pl-k">require_once</span>(<span class="pl-s"><span class="pl-pds">'</span>wp-bootstrap-gallery.php<span class="pl-pds">'</span></span>);</span></pre></div>
+
+<h2>
+<a id="useage" class="anchor" href="#useage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Useage</h2>
+
+<p>Simply create a WordPress post gallery as you usually would and the script will do the rest.</p>
+
+<h2>
+<a id="supported-layouts" class="anchor" href="#supported-layouts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported Layouts</h2>
+
+<ul>
+<li>1 Image - One full width image</li>
+<li>2 Images - Two half width images</li>
+<li>3 Images - One 3/4 width image with two 1/4 width images to the right</li>
+<li>4 Images - One full width image with three 1/3 width images underneath</li>
+<li>5 Images - Two half width images with four 1/4 width images underneath</li>
+<li>6 Images - One 2/3 width image with two 1/3 width images to the right, and three 1/3 width images underneath</li>
+<li>7 or more images -  One full width image with two 1/2 width images underneath. All remaining images 1/3 width underneath</li>
+</ul>
+
+<h2>
+<a id="creating-custom-layouts" class="anchor" href="#creating-custom-layouts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating custom layouts</h2>
+
+<p>All layouts are created using Bootstrap span declarations for 12 columns and CSS floats. The script counts the number of images and assigns an array of spans for that number of images.</p>
+
+<p>For example: If we want to layout 6 images where we have One 2/3 (8 Cols) width image on the left side with two 1/3 (4 Cols) width images on the right, and underneath two 1/3 (4 Cols) width images on the left side and one 2/3 (8 Cols) width image on the right.</p>
+
+<p><strong>Find:</strong></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">    <span class="pl-k">case</span> <span class="pl-c1">6</span>:</span>
+<span class="pl-s1">        <span class="pl-smi">$span_array</span> <span class="pl-k">=</span> <span class="pl-c1">array</span>(<span class="pl-c1">8</span>,<span class="pl-c1">4</span>,<span class="pl-c1">4</span>,<span class="pl-c1">4</span>,<span class="pl-c1">4</span>,<span class="pl-c1">4</span>);</span>
+<span class="pl-s1">        <span class="pl-k">break</span>;</span></pre></div>
+
+<p><strong>Replace With:</strong></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1">    <span class="pl-k">case</span> <span class="pl-c1">6</span>:</span>
+<span class="pl-s1">        <span class="pl-smi">$span_array</span> <span class="pl-k">=</span> <span class="pl-c1">array</span>(<span class="pl-c1">8</span>,<span class="pl-c1">4</span>,<span class="pl-c1">4</span>,<span class="pl-c1">4</span>,<span class="pl-c1">4</span>,<span class="pl-c1">8</span>);</span>
+<span class="pl-s1">        <span class="pl-k">break</span>;</span></pre></div>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h2>
+
+<p><strong>1.0.1</strong></p>
+
+<ul>
+<li>Updated code to meet WordPress standards.</li>
+<li>Added project dotfiles, such as .editorconfig, etc.</li>
+</ul>
+
+<p><strong>1.0.0</strong></p>
+
+<ul>
+<li>Updated to div layout to fix float issues.</li>
+<li>Licence now GPL-2.0+ to match WordPress.</li>
+<li>Added a copy of the GPL-2.0+ Licence.</li>
+</ul>
+
+<p><strong>0.1.0</strong></p>
+
+<ul>
+<li>Initial Commit</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/wp-bootstrap/wp-bootstrap-gallery">WP Bootstrap Gallery</a> is maintained by <a href="https://github.com/wp-bootstrap">wp-bootstrap</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
