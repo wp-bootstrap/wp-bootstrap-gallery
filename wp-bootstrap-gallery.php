@@ -10,7 +10,7 @@
  * Plugin Name: WP Bootstrap Navwalker
  * Plugin URI: https://github.com/wp-bootstrap/wp-bootstrap-gallery
  * Description: A custom Wordpress gallery for dynamic thumbnail layout using Twitter Bootstrap 2 thumbnail layouts.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Edward McIntyre - @twittem, Brandon Hubbard
  * GitHub URI: https://github.com/wp-bootstrap/wp-bootstrap-gallery
  * GitHub Plugin URI: https://github.com/wp-bootstrap/wp-bootstrap-gallery
