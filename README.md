@@ -1,5 +1,8 @@
 # WP Bootstrap Gallery
-======================
+
+[![Code Climate](https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery/badges/gpa.svg)](https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery)
+[![Test Coverage](https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery/badges/coverage.svg)](https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery/coverage)
+[![Issue Count](https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery/badges/issue_count.svg)](https://codeclimate.com/github/wp-bootstrap/wp-bootstrap-gallery)
 
 A custom WordPress gallery for dynamic thumbnail layout using Twitter Bootstrap 2 (https://github.com/twitter/bootstrap/) and the WordPress built in gallery manager. Once the script is setup it will alter the WordPress gallery shortcode to create a unique thumbnail layout based on the number of gallery items.
 
